@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "report_id": "report-20261031-152305-001",
+  "generated_at": "2026-10-31T15:23:05.843613Z",
+  "input_summary": {
+    "source_type": "csv",
+    "source_name": "demo_full_pipeline.csv",
+    "records_received": 15,
+    "events_accepted": 15,
+    "records_rejected": 0,
+    "rejected_records": []
+  },
+  "findings": [
+    {
+      "finding_id": "finding-001",
+      "agent": "threat_intelligence",
+      "rule_id": "THREAT-INTEL-DEMO-MATCH",
+      "title": "Demonstration threat indicator matched: 198.51.100.20",
+      "description": "1 security event(s) contacted demonstration threat indicator '198.51.100.20', categorized as 'known_malicious_host'. RFC 5737 test IP simulating a known malicious external host.",
+      "severity": "HIGH",
+      "evidence": [
+        {
+          "kind": "indicator_match",
+          "description": "Event destination matched local demonstration indicator '198.51.100.20' (known_malicious_host).",
+          "value": "198.51.100.20",
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0009"
+          ]
+        },
+        {
+          "kind": "event_count",
+          "description": "Observed 1 event(s) communicating with demonstration threat indicator '198.51.100.20'.",
+          "value": 1,
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0009"
+          ]
+        }
+      ],
+      "event_ids": [
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0009"
+      ],
+      "recommendation": "Review network events associated with destination indicator '198.51.100.20'. Verify the communicating internal host and inspect endpoint activity with the system owner.",
+      "requires_human_approval": true,
+      "limitations": [
+        "This is an investigation indicator, not proof of compromise.",
+        "Matched against local synthetic demonstration feed; not real-world threat intelligence."
+      ]
+    },
+    {
+      "finding_id": "finding-002",
+      "agent": "threat_intelligence",
+      "rule_id": "THREAT-INTEL-DEMO-MATCH",
+      "title": "Demonstration threat indicator matched: demo-indicator.example",
+      "description": "2 security event(s) contacted demonstration threat indicator 'demo-indicator.example', categorized as 'c2_command_and_control'. Simulated Command and Control (C2) server domain for demonstration testing.",
+      "severity": "HIGH",
+      "evidence": [
+        {
+          "kind": "indicator_match",
+          "description": "Event destination matched local demonstration indicator 'demo-indicator.example' (c2_command_and_control).",
+          "value": "demo-indicator.example",
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0010",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0011"
+          ]
+        },
+        {
+          "kind": "event_count",
+          "description": "Observed 2 event(s) communicating with demonstration threat indicator 'demo-indicator.example'.",
+          "value": 2,
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0010",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0011"
+          ]
+        }
+      ],
+      "event_ids": [
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0010",
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0011"
+      ],
+      "recommendation": "Review network events associated with destination indicator 'demo-indicator.example'. Verify the communicating internal host and inspect endpoint activity with the system owner.",
+      "requires_human_approval": true,
+      "limitations": [
+        "This is an investigation indicator, not proof of compromise.",
+        "Matched against local synthetic demonstration feed; not real-world threat intelligence."
+      ]
+    },
+    {
+      "finding_id": "finding-003",
+      "agent": "log_analyzer",
+      "rule_id": "AUTH-REPEATED-FAILURES",
+      "title": "Repeated failed logins from 192.0.2.50",
+      "description": "6 failed authentication events from source 192.0.2.50 occurred within 10 minute(s) (threshold: 5).",
+      "severity": "MEDIUM",
+      "evidence": [
+        {
+          "kind": "event_count",
+          "description": "6 failed login events from one source in the window.",
+          "value": 6,
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0001",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0002",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0003",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0004",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0005",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0006"
+          ]
+        },
+        {
+          "kind": "time_window",
+          "description": "Configured window: 10 minute(s); threshold: 5 failures.",
+          "value": "6 failures between 2026-01-01T10:00:00Z and 2026-01-01T10:05:00Z",
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0001",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0002",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0003",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0004",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0005",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0006"
+          ]
+        }
+      ],
+      "event_ids": [
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0001",
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0002",
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0003",
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0004",
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0005",
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0006"
+      ],
+      "recommendation": "Review authentication logs for source 192.0.2.50 and the targeted accounts, and verify with the system owner whether the activity was expected.",
+      "requires_human_approval": true,
+      "limitations": [
+        "This is an investigation indicator, not proof of compromise.",
+        "Failures may come from mistyped passwords, automation, or shared NAT addresses; context from the system owner is needed."
+      ]
+    },
+    {
+      "finding_id": "finding-004",
+      "agent": "network_agent",
+      "rule_id": "NET-UNUSUAL-PORT",
+      "title": "Unusual destination port 4444",
+      "description": "2 connection event(s) from 10.0.1.99 to 203.0.113.80 used destination port 4444, which is on the configured unusual-port list.",
+      "severity": "MEDIUM",
+      "evidence": [
+        {
+          "kind": "port_match",
+          "description": "Destination port 4444 matched the unusual-port list.",
+          "value": 4444,
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0012",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0013"
+          ]
+        },
+        {
+          "kind": "event_count",
+          "description": "2 event(s) on this connection.",
+          "value": 2,
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0012",
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0013"
+          ]
+        }
+      ],
+      "event_ids": [
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0012",
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0013"
+      ],
+      "recommendation": "Verify the service on 203.0.113.80:4444 and whether it is approved for host 10.0.1.99 before deciding if the activity is suspicious.",
+      "requires_human_approval": true,
+      "limitations": [
+        "This is an investigation indicator, not proof of compromise.",
+        "A port match alone does not show malicious intent; the destination service and approved network configuration are needed for context."
+      ]
+    },
+    {
+      "finding_id": "finding-005",
+      "agent": "network_agent",
+      "rule_id": "NET-UNUSUAL-PORT",
+      "title": "Unusual destination port 8443",
+      "description": "1 connection event(s) from 10.0.1.45 to 198.51.100.20 used destination port 8443, which is on the configured unusual-port list.",
+      "severity": "LOW",
+      "evidence": [
+        {
+          "kind": "port_match",
+          "description": "Destination port 8443 matched the unusual-port list.",
+          "value": 8443,
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0009"
+          ]
+        },
+        {
+          "kind": "event_count",
+          "description": "1 event(s) on this connection.",
+          "value": 1,
+          "event_ids": [
+            "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0009"
+          ]
+        }
+      ],
+      "event_ids": [
+        "evt-src-8b510f62e5bf45258e1a7adf55d63cff-0009"
+      ],
+      "recommendation": "Verify the service on 198.51.100.20:8443 and whether it is approved for host 10.0.1.45 before deciding if the activity is suspicious.",
+      "requires_human_approval": true,
+      "limitations": [
+        "This is an investigation indicator, not proof of compromise.",
+        "A port match alone does not show malicious intent; the destination service and approved network configuration are needed for context."
+      ]
+    }
+  ],
+  "overall_risk": "HIGH",
+  "overall_risk_reason": "At least one HIGH-severity finding is present.",
+  "response_plan": [
+    {
+      "related_finding_id": "finding-001",
+      "action": "Recommended investigation steps (human approval required): 1) Prioritize this finding for same-day analyst review. 2) Preserve the related event logs and evidence before any change is made to affected systems. 3) Confirm with the system owner whether the observed activity is expected. 4) If the activity is not expected, escalate to the security lead and request approval for a containment option (for example network isolation or credential reset). 5) Search DNS, proxy and firewall logs for other hosts that contacted indicator '198.51.100.20'. 6) Review the communicating internal host for unusual processes or connections together with its owner.",
+      "rationale": "HIGH severity finding 'Demonstration threat indicator matched: 198.51.100.20' (agent: threat_intelligence, rule: THREAT-INTEL-DEMO-MATCH) involves 1 event(s). This is an investigation recommendation, not proof of compromise. All steps are recommendations only and require human review and approval; no action is executed automatically. Note: this finding is based on synthetic demonstration data.",
+      "requires_human_approval": true
+    },
+    {
+      "related_finding_id": "finding-002",
+      "action": "Recommended investigation steps (human approval required): 1) Prioritize this finding for same-day analyst review. 2) Preserve the related event logs and evidence before any change is made to affected systems. 3) Confirm with the system owner whether the observed activity is expected. 4) If the activity is not expected, escalate to the security lead and request approval for a containment option (for example network isolation or credential reset). 5) Search DNS, proxy and firewall logs for other hosts that contacted indicator 'demo-indicator.example'. 6) Review the communicating internal host for unusual processes or connections together with its owner.",
+      "rationale": "HIGH severity finding 'Demonstration threat indicator matched: demo-indicator.example' (agent: threat_intelligence, rule: THREAT-INTEL-DEMO-MATCH) involves 2 event(s). This is an investigation recommendation, not proof of compromise. All steps are recommendations only and require human review and approval; no action is executed automatically. Note: this finding is based on synthetic demonstration data.",
+      "requires_human_approval": true
+    },
+    {
+      "related_finding_id": "finding-003",
+      "action": "Recommended investigation steps (human approval required): 1) Schedule this finding for analyst review within one business day. 2) Correlate the related events with other available logs. 3) Confirm with the system owner whether the observed activity is expected. 4) Document the outcome and escalate if other evidence corroborates the finding. 5) Review authentication logs for the affected account(s) and source address(es). 6) Ask the account owner whether the activity was legitimate; if it was not, request approval for a credential reset or temporary lockout.",
+      "rationale": "MEDIUM severity finding 'Repeated failed logins from 192.0.2.50' (agent: log_analyzer, rule: AUTH-REPEATED-FAILURES) involves 6 event(s). This is an investigation recommendation, not proof of compromise. All steps are recommendations only and require human review and approval; no action is executed automatically.",
+      "requires_human_approval": true
+    },
+    {
+      "related_finding_id": "finding-004",
+      "action": "Recommended investigation steps (human approval required): 1) Schedule this finding for analyst review within one business day. 2) Correlate the related events with other available logs. 3) Confirm with the system owner whether the observed activity is expected. 4) Document the outcome and escalate if other evidence corroborates the finding. 5) Verify the destination port and protocol with the application owner and check whether they are approved for this host. 6) Review the firewall rules and recent network logs for the same source host.",
+      "rationale": "MEDIUM severity finding 'Unusual destination port 4444' (agent: network_agent, rule: NET-UNUSUAL-PORT) involves 2 event(s). This is an investigation recommendation, not proof of compromise. All steps are recommendations only and require human review and approval; no action is executed automatically.",
+      "requires_human_approval": true
+    },
+    {
+      "related_finding_id": "finding-005",
+      "action": "Recommended investigation steps (human approval required): 1) Add this finding to the routine review queue. 2) Monitor for recurrence or related findings over time. 3) Close with a short note if the activity is confirmed benign. 4) Verify the destination port and protocol with the application owner and check whether they are approved for this host. 5) Review the firewall rules and recent network logs for the same source host.",
+      "rationale": "LOW severity finding 'Unusual destination port 8443' (agent: network_agent, rule: NET-UNUSUAL-PORT) involves 1 event(s). This is an investigation recommendation, not proof of compromise. All steps are recommendations only and require human review and approval; no action is executed automatically.",
+      "requires_human_approval": true
+    }
+  ],
+  "analysis_warnings": [],
+  "limitations": [
+    "Findings are indicators requiring investigation, not proof of compromise.",
+    "The analysis is rule-based and limited to the supplied records.",
+    "No automatic remediation is performed."
+  ],
+  "ai_summary": {
+    "status": "disabled",
+    "content": null
+  }
+}

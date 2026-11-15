@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+.tmp/
+.env
+*.py[cod]
+cybershield_report.json
+.DS_Store
+data/external/
+models/*.joblib
+models/training_metrics.json
+ml_predictions.json
